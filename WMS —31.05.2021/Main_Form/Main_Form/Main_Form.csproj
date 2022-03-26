@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18781C53-CE4C-4245-ACF4-C569CC6BE1DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Main_Form</RootNamespace>
+    <AssemblyName>Main_Form</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form\Download.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Download.Designer.cs">
+      <DependentUpon>Download.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormAcceptance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormAcceptance.Designer.cs">
+      <DependentUpon>FormAcceptance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Acceptance_ID_Pallet\Acceptance_IDxsd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Acceptance_IDxsd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Acceptance_ID_Pallet\Pallet_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Acceptance_ID_Pallet\Pallet_View.Designer.cs">
+      <DependentUpon>Pallet_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Employeer_Report\Employeer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employeer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Employeer_Report\Employeer_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Employeer_Report\Employeer_Report.Designer.cs">
+      <DependentUpon>Employeer_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Employees_Acceptance\Employeer_Acceptance.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employeer_Acceptance.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Employees_Acceptance\Report_Employeer_Acceptance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Employees_Acceptance\Report_Employeer_Acceptance.Designer.cs">
+      <DependentUpon>Report_Employeer_Acceptance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PlaceProduct_Report_Place\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\PlaceProduct_Report_Place\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PlaceProduct_Report_Place\Place_Product_Place.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Place_Product_Place.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product_Report\Product.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Product.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Product_Report\Product_Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Product_Report\Product_Reports.Designer.cs">
+      <DependentUpon>Product_Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Provider_Report\Provider_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Provider_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Provider_Report\Provider_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Provider_Report\Provider_Report.Designer.cs">
+      <DependentUpon>Provider_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Search_Product_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Search_Product_Form.Designer.cs">
+      <DependentUpon>Search_Product_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Table\OrdersDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\OrdersDetails.Designer.cs">
+      <DependentUpon>OrdersDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PlacementProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\PlacementProduct.Designer.cs">
+      <DependentUpon>PlacementProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table\Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\PlaceOfProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\PlaceOfProduct.Designer.cs">
+      <DependentUpon>PlaceOfProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table\Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table\EmployeeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\EmployeeInfo.Designer.cs">
+      <DependentUpon>EmployeeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormOrder.Designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table\OrderOfSupply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\OrderOfSupply.Designer.cs">
+      <DependentUpon>OrderOfSupply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table\Post.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\Post.Designer.cs">
+      <DependentUpon>Post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table\Products.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\Products.Designer.cs">
+      <DependentUpon>Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Table\Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Main_Forms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Main_Forms.Designer.cs">
+      <DependentUpon>Main_Forms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table\Provider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Table\Provider.Designer.cs">
+      <DependentUpon>Provider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TEST\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEST\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WMSDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WMSDataSet1.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\Download.resx">
+      <DependentUpon>Download.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormAcceptance.resx">
+      <DependentUpon>FormAcceptance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Search_Product_Form.resx">
+      <DependentUpon>Search_Product_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Acceptance_ID_Pallet\Pallet_View.resx">
+      <DependentUpon>Pallet_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Acceptance_ID_Pallet\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Employeer_Report\Employeer_Report.rdlc" />
+    <EmbeddedResource Include="Reports\Employeer_Report\Employeer_Report.resx">
+      <DependentUpon>Employeer_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Employees_Acceptance\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Employees_Acceptance\Report_Employeer_Acceptance.resx">
+      <DependentUpon>Report_Employeer_Acceptance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PlaceProduct_Report_Place\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PlaceProduct_Report_Place\Place.rdlc" />
+    <EmbeddedResource Include="Reports\Product_Report\Product_Reports.resx">
+      <DependentUpon>Product_Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Product_Report\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Provider_Report\Provider_Report.rdlc" />
+    <EmbeddedResource Include="Reports\Provider_Report\Provider_Report.resx">
+      <DependentUpon>Provider_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\OrdersDetails.resx">
+      <DependentUpon>OrdersDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PlacementProduct.resx">
+      <DependentUpon>PlacementProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PlaceOfProduct.resx">
+      <DependentUpon>PlaceOfProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\EmployeeInfo.resx">
+      <DependentUpon>EmployeeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormOrder.resx">
+      <DependentUpon>FormOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\OrderOfSupply.resx">
+      <DependentUpon>OrderOfSupply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\Post.resx">
+      <DependentUpon>Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\Products.resx">
+      <DependentUpon>Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Main_Forms.resx">
+      <DependentUpon>Main_Forms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Table\Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Table\Provider.resx">
+      <DependentUpon>Provider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TEST\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Reports\Acceptance_ID_Pallet\Acceptance_IDxsd.xsc">
+      <DependentUpon>Acceptance_IDxsd.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Acceptance_ID_Pallet\Acceptance_IDxsd.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Acceptance_IDxsd.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Acceptance_ID_Pallet\Acceptance_IDxsd.xss">
+      <DependentUpon>Acceptance_IDxsd.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Employeer_Report\Employeer.xsc">
+      <DependentUpon>Employeer.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Employeer_Report\Employeer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Employeer.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Employeer_Report\Employeer.xss">
+      <DependentUpon>Employeer.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Employees_Acceptance\Employeer_Acceptance.xsc">
+      <DependentUpon>Employeer_Acceptance.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Employees_Acceptance\Employeer_Acceptance.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Employeer_Acceptance.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Employees_Acceptance\Employeer_Acceptance.xss">
+      <DependentUpon>Employeer_Acceptance.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PlaceProduct_Report_Place\Place_Product_Place.xsc">
+      <DependentUpon>Place_Product_Place.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PlaceProduct_Report_Place\Place_Product_Place.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Place_Product_Place.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\PlaceProduct_Report_Place\Place_Product_Place.xss">
+      <DependentUpon>Place_Product_Place.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Product_Report\Product.xsc">
+      <DependentUpon>Product.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Product_Report\Product.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Product.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Product_Report\Product.xss">
+      <DependentUpon>Product.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Provider_Report\Provider_DataSet.xsc">
+      <DependentUpon>Provider_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Provider_Report\Provider_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Provider_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Provider_Report\Provider_DataSet.xss">
+      <DependentUpon>Provider_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WMSDataSet.xsc">
+      <DependentUpon>WMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WMSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WMSDataSet.xss">
+      <DependentUpon>WMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WMSDataSet1.xsc">
+      <DependentUpon>WMSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="WMSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WMSDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WMSDataSet1.xss">
+      <DependentUpon>WMSDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB_WMS.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB_WMS_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DB_WMS.mdf</DependentUpon>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Image\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
