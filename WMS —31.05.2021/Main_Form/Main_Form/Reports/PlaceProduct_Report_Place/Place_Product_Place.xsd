@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Place_Product_Place" targetNamespace="http://tempuri.org/Place_Product_Place.xsd" xmlns:mstns="http://tempuri.org/Place_Product_Place.xsd" xmlns="http://tempuri.org/Place_Product_Place.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="WMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="WMSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Main_Form.Properties.Settings.GlobalReference.Default.WMSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PlaceOfProductTableAdapter" GeneratorDataComponentClassName="PlaceOfProductTableAdapter" Name="PlaceOfProduct" UserDataComponentName="PlaceOfProductTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WMSConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select 
+TOP 1 
+Region_Type.Description as Region_desc
+,Area_Type.Description as Area_desc
+,Rack
+,Level
+,Place
+,PlaceOfProduct.ID_Acceptance
+,Storage_notes
+,Place_Parameters.Width as Place_ParametersWidth
+,Place_Parameters.Height as Place_ParametersHeight
+,Place_Parameters.Length as Place_Parameterslenght
+,Place_Parameters.Weight as Place_ParametersWeigth
+,PlaceOfProduct.ID_Place
+,AcceptanceOfGoods.Width as AcceptanceOfGoodsWidth
+,AcceptanceOfGoods.Heigth as AcceptanceOfGoodsHeigth
+,AcceptanceOfGoods.Length as AcceptanceOfGoodsLength
+,AcceptanceOfGoods.Weight as AcceptanceOfGoodsWeight
+,AcceptanceOfGoods.Qty
+,Product.Name
+,Product.Description as Product
+,Product.Price
+FROM AcceptanceOfGoods
+JOIN PlaceOfProduct ON AcceptanceOfGoods.ID_Acceptance = PlaceOfProduct.ID_Acceptance
+JOIN Region_Type ON Region_Type.ID_Region = PlaceOfProduct.Region
+JOIN Area_Type ON Area_Type.ID_Area = PlaceOfProduct.Area
+JOIN Place_Parameters ON Place_Parameters.ID_Parametrs = PlaceOfProduct.ID_Parameters
+JOIN Product ON AcceptanceOfGoods.ID_Product = Product.ID_Product 
+order by ID_Acceptance desc
+
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Rack" DataSetColumn="Rack" />
+              <Mapping SourceColumn="Level" DataSetColumn="Level" />
+              <Mapping SourceColumn="Place" DataSetColumn="Place" />
+              <Mapping SourceColumn="ID_Acceptance" DataSetColumn="ID_Acceptance" />
+              <Mapping SourceColumn="Storage_notes" DataSetColumn="Storage_notes" />
+              <Mapping SourceColumn="ID_Place" DataSetColumn="ID_Place" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Price" DataSetColumn="Price" />
+              <Mapping SourceColumn="Qty" DataSetColumn="Qty" />
+              <Mapping SourceColumn="Region_desc" DataSetColumn="Region_desc" />
+              <Mapping SourceColumn="Area_desc" DataSetColumn="Area_desc" />
+              <Mapping SourceColumn="Product" DataSetColumn="Product" />
+              <Mapping SourceColumn="Place_ParametersWidth" DataSetColumn="Place_ParametersWidth" />
+              <Mapping SourceColumn="Place_ParametersHeight" DataSetColumn="Place_ParametersHeight" />
+              <Mapping SourceColumn="Place_Parameterslenght" DataSetColumn="Place_Parameterslenght" />
+              <Mapping SourceColumn="Place_ParametersWeigth" DataSetColumn="Place_ParametersWeigth" />
+              <Mapping SourceColumn="AcceptanceOfGoodsWidth" DataSetColumn="AcceptanceOfGoodsWidth" />
+              <Mapping SourceColumn="AcceptanceOfGoodsHeigth" DataSetColumn="AcceptanceOfGoodsHeigth" />
+              <Mapping SourceColumn="AcceptanceOfGoodsLength" DataSetColumn="AcceptanceOfGoodsLength" />
+              <Mapping SourceColumn="AcceptanceOfGoodsWeight" DataSetColumn="AcceptanceOfGoodsWeight" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Place_Product_Place" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Place_Product_Place" msprop:Generator_UserDSName="Place_Product_Place">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PlaceOfProduct" msprop:Generator_TableClassName="PlaceOfProductDataTable" msprop:Generator_TableVarName="tablePlaceOfProduct" msprop:Generator_TablePropName="PlaceOfProduct" msprop:Generator_RowDeletingName="PlaceOfProductRowDeleting" msprop:Generator_RowChangingName="PlaceOfProductRowChanging" msprop:Generator_RowEvHandlerName="PlaceOfProductRowChangeEventHandler" msprop:Generator_RowDeletedName="PlaceOfProductRowDeleted" msprop:Generator_UserTableName="PlaceOfProduct" msprop:Generator_RowChangedName="PlaceOfProductRowChanged" msprop:Generator_RowEvArgName="PlaceOfProductRowChangeEvent" msprop:Generator_RowClassName="PlaceOfProductRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Rack" msprop:Generator_ColumnVarNameInTable="columnRack" msprop:Generator_ColumnPropNameInRow="Rack" msprop:Generator_ColumnPropNameInTable="RackColumn" msprop:Generator_UserColumnName="Rack" type="xs:int" />
+              <xs:element name="Level" msprop:Generator_ColumnVarNameInTable="columnLevel" msprop:Generator_ColumnPropNameInRow="Level" msprop:Generator_ColumnPropNameInTable="LevelColumn" msprop:Generator_UserColumnName="Level" type="xs:int" />
+              <xs:element name="Place" msprop:Generator_ColumnVarNameInTable="columnPlace" msprop:Generator_ColumnPropNameInRow="Place" msprop:Generator_ColumnPropNameInTable="PlaceColumn" msprop:Generator_UserColumnName="Place" type="xs:int" />
+              <xs:element name="ID_Acceptance" msprop:Generator_ColumnVarNameInTable="columnID_Acceptance" msprop:Generator_ColumnPropNameInRow="ID_Acceptance" msprop:Generator_ColumnPropNameInTable="ID_AcceptanceColumn" msprop:Generator_UserColumnName="ID_Acceptance" type="xs:int" minOccurs="0" />
+              <xs:element name="Storage_notes" msprop:Generator_ColumnVarNameInTable="columnStorage_notes" msprop:Generator_ColumnPropNameInRow="Storage_notes" msprop:Generator_ColumnPropNameInTable="Storage_notesColumn" msprop:Generator_UserColumnName="Storage_notes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_Place" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnID_Place" msprop:Generator_ColumnPropNameInRow="ID_Place" msprop:Generator_ColumnPropNameInTable="ID_PlaceColumn" msprop:Generator_UserColumnName="ID_Place" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Price" msprop:Generator_ColumnVarNameInTable="columnPrice" msprop:Generator_ColumnPropNameInRow="Price" msprop:Generator_ColumnPropNameInTable="PriceColumn" msprop:Generator_UserColumnName="Price" type="xs:decimal" />
+              <xs:element name="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:short" />
+              <xs:element name="Region_desc" msprop:Generator_ColumnVarNameInTable="columnRegion_desc" msprop:Generator_ColumnPropNameInRow="Region_desc" msprop:Generator_ColumnPropNameInTable="Region_descColumn" msprop:Generator_UserColumnName="Region_desc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Area_desc" msprop:Generator_ColumnVarNameInTable="columnArea_desc" msprop:Generator_ColumnPropNameInRow="Area_desc" msprop:Generator_ColumnPropNameInTable="Area_descColumn" msprop:Generator_UserColumnName="Area_desc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Product" msprop:Generator_ColumnVarNameInTable="columnProduct" msprop:Generator_ColumnPropNameInRow="Product" msprop:Generator_ColumnPropNameInTable="ProductColumn" msprop:Generator_UserColumnName="Product" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Place_ParametersWidth" msprop:Generator_ColumnVarNameInTable="columnPlace_ParametersWidth" msprop:Generator_ColumnPropNameInRow="Place_ParametersWidth" msprop:Generator_ColumnPropNameInTable="Place_ParametersWidthColumn" msprop:Generator_UserColumnName="Place_ParametersWidth" type="xs:double" />
+              <xs:element name="Place_ParametersHeight" msprop:Generator_ColumnVarNameInTable="columnPlace_ParametersHeight" msprop:Generator_ColumnPropNameInRow="Place_ParametersHeight" msprop:Generator_ColumnPropNameInTable="Place_ParametersHeightColumn" msprop:Generator_UserColumnName="Place_ParametersHeight" type="xs:double" />
+              <xs:element name="Place_Parameterslenght" msprop:Generator_ColumnVarNameInTable="columnPlace_Parameterslenght" msprop:Generator_ColumnPropNameInRow="Place_Parameterslenght" msprop:Generator_ColumnPropNameInTable="Place_ParameterslenghtColumn" msprop:Generator_UserColumnName="Place_Parameterslenght" type="xs:double" />
+              <xs:element name="Place_ParametersWeigth" msprop:Generator_ColumnVarNameInTable="columnPlace_ParametersWeigth" msprop:Generator_ColumnPropNameInRow="Place_ParametersWeigth" msprop:Generator_ColumnPropNameInTable="Place_ParametersWeigthColumn" msprop:Generator_UserColumnName="Place_ParametersWeigth" type="xs:double" />
+              <xs:element name="AcceptanceOfGoodsWidth" msprop:Generator_ColumnVarNameInTable="columnAcceptanceOfGoodsWidth" msprop:Generator_ColumnPropNameInRow="AcceptanceOfGoodsWidth" msprop:Generator_ColumnPropNameInTable="AcceptanceOfGoodsWidthColumn" msprop:Generator_UserColumnName="AcceptanceOfGoodsWidth" type="xs:double" />
+              <xs:element name="AcceptanceOfGoodsHeigth" msprop:Generator_ColumnVarNameInTable="columnAcceptanceOfGoodsHeigth" msprop:Generator_ColumnPropNameInRow="AcceptanceOfGoodsHeigth" msprop:Generator_ColumnPropNameInTable="AcceptanceOfGoodsHeigthColumn" msprop:Generator_UserColumnName="AcceptanceOfGoodsHeigth" type="xs:double" />
+              <xs:element name="AcceptanceOfGoodsLength" msprop:Generator_ColumnVarNameInTable="columnAcceptanceOfGoodsLength" msprop:Generator_ColumnPropNameInRow="AcceptanceOfGoodsLength" msprop:Generator_ColumnPropNameInTable="AcceptanceOfGoodsLengthColumn" msprop:Generator_UserColumnName="AcceptanceOfGoodsLength" type="xs:double" />
+              <xs:element name="AcceptanceOfGoodsWeight" msprop:Generator_ColumnVarNameInTable="columnAcceptanceOfGoodsWeight" msprop:Generator_ColumnPropNameInRow="AcceptanceOfGoodsWeight" msprop:Generator_ColumnPropNameInTable="AcceptanceOfGoodsWeightColumn" msprop:Generator_UserColumnName="AcceptanceOfGoodsWeight" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:PlaceOfProduct" />
+      <xs:field xpath="mstns:ID_Place" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

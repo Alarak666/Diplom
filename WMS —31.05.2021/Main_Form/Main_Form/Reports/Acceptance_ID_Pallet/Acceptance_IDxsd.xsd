@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Acceptance_IDxsd" targetNamespace="http://tempuri.org/Acceptance_IDxsd.xsd" xmlns:mstns="http://tempuri.org/Acceptance_IDxsd.xsd" xmlns="http://tempuri.org/Acceptance_IDxsd.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="WMSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="WMSConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Main_Form.Properties.Settings.GlobalReference.Default.WMSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AcceptanceOfGoodsTableAdapter" GeneratorDataComponentClassName="AcceptanceOfGoodsTableAdapter" Name="AcceptanceOfGoods" UserDataComponentName="AcceptanceOfGoodsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WMSConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select 
+TOP 1
+ID_Acceptance
+,Type_Pallet.Type_Pallet
+,Product.Name
+,Employees.MName + ' ' +SUBSTRING(Employees.FName,1,1) + '.' + ' ' + SUBSTRING(Employees.LName,1,1) + '.' + ' ' As 'Employee_PIB'
+,Acceptanceofgoods.Width
+,Acceptanceofgoods.Heigth
+,Acceptanceofgoods.Length
+,Acceptanceofgoods.Weight
+,Acceptanceofgoods.Qty
+,Acceptanceofgoods.Date_Accepts
+,Acceptanceofgoods.Data_Expiration
+,Acceptanceofgoods.N_Pallet
+,Provider.MName + ' ' +SUBSTRING(Provider.FName,1,1) + '.' + ' ' + SUBSTRING(Provider.LName,1,1) + '.' + ' ' As 'Provider_PIB'
+,Provider.Address As 'Address'
+,Provider.Phone As 'Phone'
+,AcceptanceOfGoods.Qty * AcceptanceOfGoods.Weight as 'Full_Weight'
+,Type_Pallet.Weight as Weight_Pallet
+from AcceptanceOfGoods
+JOIN Type_Pallet ON Type_Pallet.ID_Type = AcceptanceOfGoods.ID_Type_Pallet
+JOIN Product ON Product.ID_Product = AcceptanceOfGoods.ID_Product
+JOIN Employees ON Employees.ID = AcceptanceOfGoods.ID_Employer
+JOIN OrdersOfSupply ON OrdersOfSupply.ID_Supply = AcceptanceOfGoods.ID_SupplyProuduct
+JOIN Provider ON Provider.ID = OrdersOfSupply.ID_Provider
+order by ID_Acceptance desc
+
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Acceptance" DataSetColumn="ID_Acceptance" />
+              <Mapping SourceColumn="Width" DataSetColumn="Width" />
+              <Mapping SourceColumn="Heigth" DataSetColumn="Heigth" />
+              <Mapping SourceColumn="Length" DataSetColumn="Length" />
+              <Mapping SourceColumn="Weight" DataSetColumn="Weight" />
+              <Mapping SourceColumn="Qty" DataSetColumn="Qty" />
+              <Mapping SourceColumn="Date_Accepts" DataSetColumn="Date_Accepts" />
+              <Mapping SourceColumn="Data_Expiration" DataSetColumn="Data_Expiration" />
+              <Mapping SourceColumn="N_Pallet" DataSetColumn="N_Pallet" />
+              <Mapping SourceColumn="Type_Pallet" DataSetColumn="Type_Pallet" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Employee_PIB" DataSetColumn="Employee_PIB" />
+              <Mapping SourceColumn="Provider_PIB" DataSetColumn="Provider_PIB" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+              <Mapping SourceColumn="Phone" DataSetColumn="Phone" />
+              <Mapping SourceColumn="Full_Weight" DataSetColumn="Full_Weight" />
+              <Mapping SourceColumn="Weight_Pallet" DataSetColumn="Weight_Pallet" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Acceptance_IDxsd" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Acceptance_IDxsd" msprop:Generator_UserDSName="Acceptance_IDxsd">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AcceptanceOfGoods" msprop:Generator_TableClassName="AcceptanceOfGoodsDataTable" msprop:Generator_TableVarName="tableAcceptanceOfGoods" msprop:Generator_TablePropName="AcceptanceOfGoods" msprop:Generator_RowDeletingName="AcceptanceOfGoodsRowDeleting" msprop:Generator_RowChangingName="AcceptanceOfGoodsRowChanging" msprop:Generator_RowEvHandlerName="AcceptanceOfGoodsRowChangeEventHandler" msprop:Generator_RowDeletedName="AcceptanceOfGoodsRowDeleted" msprop:Generator_UserTableName="AcceptanceOfGoods" msprop:Generator_RowChangedName="AcceptanceOfGoodsRowChanged" msprop:Generator_RowEvArgName="AcceptanceOfGoodsRowChangeEvent" msprop:Generator_RowClassName="AcceptanceOfGoodsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Acceptance" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Acceptance" msprop:Generator_ColumnPropNameInRow="ID_Acceptance" msprop:Generator_ColumnPropNameInTable="ID_AcceptanceColumn" msprop:Generator_UserColumnName="ID_Acceptance" type="xs:int" />
+              <xs:element name="Width" msprop:Generator_ColumnVarNameInTable="columnWidth" msprop:Generator_ColumnPropNameInRow="Width" msprop:Generator_ColumnPropNameInTable="WidthColumn" msprop:Generator_UserColumnName="Width" type="xs:double" />
+              <xs:element name="Heigth" msprop:Generator_ColumnVarNameInTable="columnHeigth" msprop:Generator_ColumnPropNameInRow="Heigth" msprop:Generator_ColumnPropNameInTable="HeigthColumn" msprop:Generator_UserColumnName="Heigth" type="xs:double" />
+              <xs:element name="Length" msprop:Generator_ColumnVarNameInTable="columnLength" msprop:Generator_ColumnPropNameInRow="Length" msprop:Generator_ColumnPropNameInTable="LengthColumn" msprop:Generator_UserColumnName="Length" type="xs:double" />
+              <xs:element name="Weight" msprop:Generator_ColumnVarNameInTable="columnWeight" msprop:Generator_ColumnPropNameInRow="Weight" msprop:Generator_ColumnPropNameInTable="WeightColumn" msprop:Generator_UserColumnName="Weight" type="xs:double" />
+              <xs:element name="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_UserColumnName="Qty" type="xs:short" />
+              <xs:element name="Date_Accepts" msprop:Generator_ColumnVarNameInTable="columnDate_Accepts" msprop:Generator_ColumnPropNameInRow="Date_Accepts" msprop:Generator_ColumnPropNameInTable="Date_AcceptsColumn" msprop:Generator_UserColumnName="Date_Accepts" type="xs:dateTime" />
+              <xs:element name="Data_Expiration" msprop:Generator_ColumnVarNameInTable="columnData_Expiration" msprop:Generator_ColumnPropNameInRow="Data_Expiration" msprop:Generator_ColumnPropNameInTable="Data_ExpirationColumn" msprop:Generator_UserColumnName="Data_Expiration" type="xs:dateTime" />
+              <xs:element name="N_Pallet" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnN_Pallet" msprop:Generator_ColumnPropNameInRow="N_Pallet" msprop:Generator_ColumnPropNameInTable="N_PalletColumn" msprop:Generator_UserColumnName="N_Pallet" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type_Pallet" msprop:Generator_ColumnVarNameInTable="columnType_Pallet" msprop:Generator_ColumnPropNameInRow="Type_Pallet" msprop:Generator_ColumnPropNameInTable="Type_PalletColumn" msprop:Generator_UserColumnName="Type_Pallet">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Employee_PIB" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEmployee_PIB" msprop:Generator_ColumnPropNameInRow="Employee_PIB" msprop:Generator_ColumnPropNameInTable="Employee_PIBColumn" msprop:Generator_UserColumnName="Employee_PIB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="27" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Provider_PIB" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnProvider_PIB" msprop:Generator_ColumnPropNameInRow="Provider_PIB" msprop:Generator_ColumnPropNameInTable="Provider_PIBColumn" msprop:Generator_UserColumnName="Provider_PIB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="37" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_UserColumnName="Phone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="18" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Full_Weight" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFull_Weight" msprop:Generator_ColumnPropNameInRow="Full_Weight" msprop:Generator_ColumnPropNameInTable="Full_WeightColumn" msprop:Generator_UserColumnName="Full_Weight" type="xs:double" minOccurs="0" />
+              <xs:element name="Weight_Pallet" msprop:Generator_ColumnVarNameInTable="columnWeight_Pallet" msprop:Generator_ColumnPropNameInRow="Weight_Pallet" msprop:Generator_ColumnPropNameInTable="Weight_PalletColumn" msprop:Generator_UserColumnName="Weight_Pallet" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AcceptanceOfGoods" />
+      <xs:field xpath="mstns:ID_Acceptance" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
